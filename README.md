@@ -16,6 +16,7 @@ The original project monolith (with a full comprehensive commit history) can be 
 
 - [SolidJS](https://www.solidjs.com/) as a web framework
 - [Node.js](https://nodejs.org/en/) for the server runtime environment
+- [Vite](https://vitejs.dev/) as a build tool and development server
 - [HTML5 Canvas](https://www.w3schools.com/html/html5_canvas.asp) as a container for the graphics
 - [Pexels Draw](https://apps.apple.com/us/app/pexels-draw/id1320744895?mt=12) for creating the boundary images and ghost sprites
 - [GitHub](https://github.com/) for version control
