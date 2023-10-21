@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@solidjs/testing-library";
+import { cleanup, render } from "@solidjs/testing-library";
 import Main from "./main";
 import { describe, expect, it, afterEach } from "vitest";
 import "@testing-library/jest-dom";
@@ -14,21 +14,21 @@ describe("Main", () => {
   });
 
   it("has the signup and login buttons", () => {
-    render(() => <Main />);
+    const { getByTestId } = render(() => <Main />);
 
-    const signup = screen.getByTestId("signup-button");
+    const signup = getByTestId("signup-button");
     expect(signup).toBeInTheDocument();
     expect(signup).toHaveTextContent("Sign up");
 
-    const login = screen.getByTestId("login-button");
+    const login = getByTestId("login-button");
     expect(login).toBeInTheDocument();
     expect(login).toHaveTextContent("Log in");
   });
 
   it("does not have the logout button", () => {
-    render(() => <Main />);
+    const { queryByTestId } = render(() => <Main />);
 
-    const logout = screen.queryByTestId("logout-button");
+    const logout = queryByTestId("logout-button");
     expect(logout).not.toBeInTheDocument();
   });
 
@@ -40,9 +40,9 @@ describe("Main", () => {
   });
 
   it("has the play button", () => {
-    render(() => <Main />);
+    const { getByTestId } = render(() => <Main />);
 
-    const play = screen.getByTestId("play-button");
+    const play = getByTestId("play-button");
     expect(play).toBeInTheDocument();
     expect(play).toHaveTextContent("Play");
   });
@@ -64,20 +64,20 @@ describe("Main", () => {
   });
 
   it("has the logout button when a user is logged in", () => {
-    render(() => <Main user={user} />);
+    const { getByTestId } = render(() => <Main user={user} />);
 
-    const logout = screen.getByTestId("logout-button");
+    const logout = getByTestId("logout-button");
     expect(logout).toBeInTheDocument();
     expect(logout).toHaveTextContent("Log out");
   });
 
   it("does not have the signup and login buttons when a user is logged in", () => {
-    render(() => <Main user={user} />);
+    const { queryByTestId } = render(() => <Main user={user} />);
 
-    const signup = screen.queryByTestId("signup-button");
+    const signup = queryByTestId("signup-button");
     expect(signup).not.toBeInTheDocument();
 
-    const login = screen.queryByTestId("login-button");
+    const login = queryByTestId("login-button");
     expect(login).not.toBeInTheDocument();
   });
 
