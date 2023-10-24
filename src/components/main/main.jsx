@@ -1,7 +1,23 @@
-import { Show } from "solid-js";
+import { createSignal, onMount, Show } from "solid-js";
 import "./main.css";
+import { Howl } from "howler";
 
 export default function Main(props) {
+  const [theme] = createSignal(new Howl({
+    src: ["/public/audio/title_theme.wav"],
+    loop: true,
+    volume: 0.3,
+  }));
+
+  onMount(() => {
+    theme().play();
+    window.addEventListener("keydown", (event) => {
+      if (["ArrowUp", "ArrowDown"].includes(event.code)) {
+        event.preventDefault();
+      }
+    });
+  });
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.reload();
