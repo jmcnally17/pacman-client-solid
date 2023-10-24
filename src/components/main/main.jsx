@@ -1,13 +1,15 @@
 import { createSignal, onMount, Show } from "solid-js";
-import "./main.css";
 import { Howl } from "howler";
+import "./main.css";
 
 export default function Main(props) {
-  const [theme] = createSignal(new Howl({
-    src: ["/audio/title_theme.wav"],
-    loop: true,
-    volume: 0.3,
-  }));
+  const [theme] = createSignal(
+    new Howl({
+      src: ["/audio/title_theme.wav"],
+      loop: true,
+      volume: 0.3,
+    })
+  );
 
   onMount(() => {
     theme().play();
@@ -38,15 +40,23 @@ export default function Main(props) {
         fallback={
           <div>
             <a href="/login">
-              <button class="login-button" data-testid="login-button">Log in</button>
+              <button class="login-button" data-testid="login-button">
+                Log in
+              </button>
             </a>
             <a href="/signup">
-              <button class="signup-button" data-testid="signup-button">Sign up</button>
+              <button class="signup-button" data-testid="signup-button">
+                Sign up
+              </button>
             </a>
           </div>
         }
       >
-        <button class="logout-button" data-testid="logout-button" onClick={handleLogout}>
+        <button
+          class="logout-button"
+          data-testid="logout-button"
+          onClick={handleLogout}
+        >
           Log out
         </button>
       </Show>

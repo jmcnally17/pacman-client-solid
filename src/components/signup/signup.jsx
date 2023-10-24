@@ -1,23 +1,23 @@
 import { createSignal } from "solid-js";
 import axios from "axios";
-import "./signup.css";
 import { Profanity, ProfanityOptions } from "@2toad/profanity";
+import "./signup.css";
 
 export default function Signup() {
   const [username, setUsername] = createSignal("");
   const [password, setPassword] = createSignal("");
   const [error, setError] = createSignal("");
 
-  const usersUrl = import.meta.env.REACT_APP_BACKEND_URL
-    ? `${import.meta.env.REACT_APP_BACKEND_URL}/users`
+  const usersUrl = import.meta.env.BACKEND_URL
+    ? `${import.meta.env.BACKEND_URL}/users`
     : "http://localhost:8080/users";
 
-  const authUrl = import.meta.env.REACT_APP_BACKEND_URL
-    ? `${import.meta.env.REACT_APP_BACKEND_URL}/auth`
+  const authUrl = import.meta.env.BACKEND_URL
+    ? `${import.meta.env.BACKEND_URL}/auth`
     : "http://localhost:8080/auth";
 
-  const redirectUrl = import.meta.env.REACT_APP_URL
-    ? import.meta.env.REACT_APP_URL
+  const redirectUrl = import.meta.env.URL
+    ? import.meta.env.URL
     : "http://localhost:8000";
 
   const options = new ProfanityOptions();
