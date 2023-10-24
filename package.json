@@ -22,7 +22,9 @@
     "vitest": "^0.34.6"
   },
   "dependencies": {
+    "@2toad/profanity": "^2.2.0",
     "@solidjs/router": "^0.8.3",
+    "axios": "^1.5.1",
     "howler": "^2.2.4",
     "solid-js": "^1.7.6"
   }

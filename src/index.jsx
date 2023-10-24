@@ -5,6 +5,7 @@ import { Route, Router, Routes } from "@solidjs/router";
 import "./index.css";
 import Footer from "./components/footer/footer";
 import Main from "./components/main/main";
+import Signup from "./components/signup/signup";
 
 const root = document.getElementById("root");
 
@@ -18,11 +19,16 @@ render(
   () => (
     <div>
       <Router>
-        <Routes>
-          <Route path="/" component={Main} />
-        </Routes>
+        <div class="App">
+          <div id="subRoot">
+            <Routes>
+              <Route path="/" component={Main} />
+              <Route path="/signup" component={Signup} />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
       </Router>
-      <Footer />
     </div>
   ),
   root

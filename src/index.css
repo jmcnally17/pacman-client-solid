@@ -5,10 +5,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 code {
@@ -19,4 +15,11 @@ code {
 h1,
 label {
   color: yellow;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

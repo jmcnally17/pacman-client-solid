@@ -4,7 +4,7 @@ import { Howl } from "howler";
 
 export default function Main(props) {
   const [theme] = createSignal(new Howl({
-    src: ["/public/audio/title_theme.wav"],
+    src: ["/audio/title_theme.wav"],
     loop: true,
     volume: 0.3,
   }));
