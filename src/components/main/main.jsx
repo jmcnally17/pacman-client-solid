@@ -12,12 +12,14 @@ export default function Main(props) {
   );
 
   onMount(() => {
-    theme().play();
-    window.addEventListener("keydown", (event) => {
-      if (["ArrowUp", "ArrowDown"].includes(event.code)) {
-        event.preventDefault();
-      }
-    });
+    if (window.location.pathname === "/") {
+      theme().play();
+      window.addEventListener("keydown", (event) => {
+        if (["ArrowUp", "ArrowDown"].includes(event.code)) {
+          event.preventDefault();
+        }
+      });
+    }
   });
 
   const handleLogout = () => {
